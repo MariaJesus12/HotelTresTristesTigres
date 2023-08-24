@@ -8,6 +8,5 @@ public interface List<Type> {
     public void insert(Type obj);
     public void update(Type obj);
     public void delete(Type obj);
-    public void read(Object id);
-    public void readAll();
+    public Type search(Object id);
 }

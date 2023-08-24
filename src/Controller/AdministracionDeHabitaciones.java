@@ -37,29 +37,14 @@ class AdministracionDeHabitaciones implements List<Habitaciones> {
     public void delete(Habitaciones obj) {
         habitaciones.remove(obj);
     }
-
     @Override
-    public void read(Object id) {
-        for (Habitaciones habitacion : habitaciones) {
-            if (habitacion.getIdhabitacion() == (int) id) {
-                System.out.println("Habitación: " + habitacion.getIdhabitacion());
-                System.out.println("Tipo: " + habitacion.getHabitacion());
-                System.out.println("Ocupada: " + habitacion.isEstado());
-                System.out.println("Precio: " + habitacion.getPrecio());
-                break;
-            }
+    public Habitaciones search(Object tipo) {
+    for (Habitaciones habitacion : habitaciones) {
+        if (habitacion.getHabitacion().equals(tipo)) {
+            return habitacion;
         }
     }
-
-    @Override
-    public void readAll() {
-        for (Habitaciones habitacion : habitaciones) {
-            System.out.println("Habitación: " + habitacion.getIdhabitacion());
-            System.out.println("Tipo: " + habitacion.getHabitacion());
-            System.out.println("Ocupada: " + habitacion.isEstado());
-            System.out.println("Precio: " + habitacion.getPrecio());
-            System.out.println("---------------");
-        }
-    }
+    return null;
+}
 }
 
